@@ -4,35 +4,36 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
-    android:layout_margin="16dp"
-    
+    app:cardCornerRadius="10dp"
+    android:layout_margin="12dp"
+    android:backgroundTint="#455FED"
+
     >
-    
+
+
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:orientation="vertical"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#83C7CF"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_marginLeft="50dp"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:text="Systolic    : "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/systolicText"
@@ -41,8 +42,7 @@
                 android:text=" 120 "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
+                android:textStyle="italic">
 
             </TextView>
 
@@ -52,19 +52,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_marginLeft="50dp"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:text="Diastolic   : "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/diastolicText"
@@ -73,8 +71,7 @@
                 android:text=" 120 "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
+                android:textStyle="italic">
 
             </TextView>
 
@@ -84,19 +81,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_marginLeft="50dp"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:text="Heart rate : "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/heartText"
@@ -105,8 +100,7 @@
                 android:text=" 120 "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
+                android:textStyle="italic">
 
             </TextView>
 
@@ -116,19 +110,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:orientation="horizontal"
             android:layout_marginLeft="50dp"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date           : "
                 android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/dateText"
@@ -137,8 +129,7 @@
                 android:text=" 120 "
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"
-                >
+                android:textStyle="italic">
 
             </TextView>
 
@@ -148,18 +139,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/editButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit"
-                android:textSize="25dp"
+                android:layout_marginLeft="40dp"
                 android:backgroundTint="#03A9F4"
-                android:layout_marginLeft="20dp"
-                >
+                android:text="Edit"
+                android:textSize="25dp">
 
             </Button>
 
@@ -167,11 +156,10 @@
                 android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textSize="25dp"
+                android:layout_marginLeft="70dp"
                 android:backgroundTint="#EC683E"
-                android:layout_marginLeft="80dp"
-                >
+                android:text="Delete"
+                android:textSize="25dp">
 
             </Button>
 
@@ -179,4 +167,14 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>
+

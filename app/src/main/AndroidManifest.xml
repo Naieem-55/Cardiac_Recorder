@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Cardiac_Recorder"
         tools:targetApi="31">
         <activity
+            android:name=".controll"
+            android:exported="false" />
+        <activity
             android:name=".userList"
             android:exported="false" />
         <activity
