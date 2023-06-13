@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://cardiac-recorder-bdaf8-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     public static String phoneNo;
     public static int serialNo = 0;
     @Override
@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
 
                                 if(getPassword.equals(passwordText)){
                                     Toast.makeText(Login.this,"Login Successful.",Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(Login.this,userList.class));
+                                    startActivity(new Intent(Login.this,controll.class));
                                     finish();
                                 }else{
                                     Toast.makeText(Login.this, "Wrong password!.", Toast.LENGTH_SHORT).show();

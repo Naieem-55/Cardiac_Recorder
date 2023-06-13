@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,13 +19,16 @@ import java.util.ArrayList;
 public class userList extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://cardiac-recorder-bdaf8-default-rtdb.firebaseio.com/");
+    String phone = Login.phoneNo;
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("users").child(phone);
     MyAdapter myAdapter;
     ArrayList<User> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_user_list);
 
         recyclerView = findViewById(R.id.userlist);
@@ -40,8 +44,14 @@ public class userList extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    User user = dataSnapshot.getValue(User.class);
-                    list.add(user);
+                    try{
+                        User user = dataSnapshot.getValue(User.class);
+                        list.add(user);
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+
                 }
 
                 myAdapter.notifyDataSetChanged();

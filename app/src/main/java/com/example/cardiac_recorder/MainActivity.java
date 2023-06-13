@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         final String phoneNumber = Login.phoneNo;  // Phone No taken from Login page
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cardiac-recorder-bdaf8-default-rtdb.firebaseio.com/").child("users");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
 
         addButton.setOnClickListener(
                 new View.OnClickListener() {
