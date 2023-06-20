@@ -6,7 +6,24 @@ public class User {
     String Systolic , Diastolic, HeartRate , Date, Comment, Time ;
     //Button editButton , deleteButton;
 
-
+    /**
+     * Constructor ,called when object is defined.
+     * @param systolic
+     * @param diastolic
+     * @param heartRate
+     * @param date
+     * @param comment
+     * @param time
+     */
+    public User(String systolic,String diastolic,String heartRate,String date,String comment,String time)
+    {
+        Systolic = systolic;
+        Diastolic = diastolic;
+        HeartRate = heartRate;
+        Date = date;
+        Comment = comment;
+        Time = time;
+    }
     public User() {
     }
 
