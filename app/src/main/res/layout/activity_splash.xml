@@ -41,7 +41,7 @@
         android:textStyle="italic"
         android:textColor="#150803"
         android:textAlignment="center"
-        android:text="Your Health Guid"
+        android:text="Your Health Guide"
         android:layout_marginTop="30dp"
         >
 

@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                                     databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Diastolic").setValue(diastolicPressureText);
                                     databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("HeartRate").setValue(heartRateText);
                                     databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Comment").setValue(comment2);
+
+                                    Toast.makeText(MainActivity.this, "Added new record successfully", Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
