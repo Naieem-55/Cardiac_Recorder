@@ -19,7 +19,7 @@ public class controll extends AppCompatActivity {
         buttonShowData = findViewById(R.id.buttonShowData);
         buttonAddData = findViewById(R.id.buttonAddData);
 
-        buttonShowData.setOnClickListener(new View.OnClickListener() {
+        buttonAddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(controll.this, userList.class);
@@ -27,7 +27,7 @@ public class controll extends AppCompatActivity {
             }
         });
 
-        buttonAddData.setOnClickListener(new View.OnClickListener() {
+        buttonShowData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(controll.this, MainActivity.class);

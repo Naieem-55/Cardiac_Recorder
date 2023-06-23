@@ -38,6 +38,14 @@ public class userList extends AppCompatActivity {
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
+        myAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                MyAdapter.OnItemClickListener.super.onItemClick(position);
+                list.remove(position);
+                myAdapter.notifyItemRemoved(position);
+            }
+        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
