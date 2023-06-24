@@ -7,15 +7,14 @@
     app:cardCornerRadius="30dp"
     android:layout_margin="15dp"
     android:backgroundTint="#BABBBF"
-
     >
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#83C7CF"
-
+        android:background="#20CEE3"
+        android:padding="8dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -139,12 +138,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="50dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:id="@+id/editButton"
                 android:layout_width="121dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/rounded"
                 android:src="@drawable/edit_button">
 
             </ImageView>
@@ -153,6 +154,8 @@
                 android:id="@+id/deleteButton"
                 android:layout_width="125dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/rounded"
                 android:src="@drawable/delete_button">
 
             </ImageView>
