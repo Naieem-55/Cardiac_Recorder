@@ -1,6 +1,8 @@
 package com.example.cardiac_recorder;
 
 import android.content.Context;
+import android.content.Intent;
+import android.location.GnssAntennaInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     Context context;
     ArrayList<User> list;
     private OnItemClickListener listener;
+    public static int itemPosition ;
 
     public interface OnItemClickListener{
         default void onItemClick(int position){
@@ -75,7 +78,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    itemPosition = getAdapterPosition();
 
+                   // listener.onItemClick(getAdapterPosition());
+                    //Intent intent = new Intent(MyAdapter.this, editActivity.class);
+
+                    Context context1 = itemView.getContext();
+                    Intent intent = new Intent(context1, editActivity.class);
+
+                    context1.startActivity(intent);
                 }
             });
 
