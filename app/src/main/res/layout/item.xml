@@ -4,9 +4,10 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
-    app:cardCornerRadius="30dp"
+    app:cardCornerRadius="40dp"
     android:layout_margin="15dp"
     android:backgroundTint="#BABBBF"
+    android:id="@+id/recyclerViewPage"
     >
 
 

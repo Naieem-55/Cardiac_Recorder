@@ -7,9 +7,11 @@
     android:orientation="vertical"
     android:background="@drawable/health01"
     android:gravity="center"
+    android:id="@+id/activityRegister"
     tools:context=".Register">
 
     <TextView
+        android:id="@+id/registerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
@@ -119,6 +121,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/belowText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Already have an Account ? "

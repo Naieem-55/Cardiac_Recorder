@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/health07"
+    android:id="@+id/editActivity"
     tools:context=".MainActivity">
 
 
@@ -150,10 +151,10 @@
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <TextView
         android:id="@+id/textView"
@@ -229,6 +230,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.221" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="111dp"
+        android:layout_height="43dp"
+        android:backgroundTint="@color/black"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

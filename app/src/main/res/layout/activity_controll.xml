@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/health03"
+    android:id="@+id/controllActivity"
     tools:context=".controll">
 
 

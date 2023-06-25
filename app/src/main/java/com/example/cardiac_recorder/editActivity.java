@@ -3,6 +3,7 @@ package com.example.cardiac_recorder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,7 @@ public class editActivity extends AppCompatActivity {
 
         final EditText comment = findViewById(R.id.editTextTextPersonName7);
         final Button editBtn = findViewById(R.id.button);
+        final Button backButton = findViewById(R.id.buttonBack);
 
 
 
@@ -79,6 +81,14 @@ public class editActivity extends AppCompatActivity {
 
                 }
         );
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(editActivity.this, controll.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
