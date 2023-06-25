@@ -7,9 +7,11 @@
     android:gravity="center"
     android:background="@drawable/health02"
     android:orientation="vertical"
+    android:id="@+id/loginActivity"
     tools:context=".Login">
 
     <TextView
+        android:id="@+id/loginText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-100px"
@@ -73,6 +75,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/bottomText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dont have an Account ? "
@@ -80,11 +83,12 @@
             android:textColor="@color/black"
             android:textSize="16dp"
             />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:id="@+id/register_now_button"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="5dp"
             android:text="Register Now"
             android:textColor="#030E4A"
             android:textStyle="bold"

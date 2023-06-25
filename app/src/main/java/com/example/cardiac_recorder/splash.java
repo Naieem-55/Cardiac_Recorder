@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class splash extends AppCompatActivity {
 
     ImageView imageView;
-    TextView text1, text2;
+    TextView text1, text2 , text3 ,text4 ;
     Animation top , down;
 
     public static int SPLASH_SCREEN = 2500;
@@ -28,6 +28,9 @@ public class splash extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         text1 = findViewById(R.id.text1);
         text2 = findViewById(R.id.text2);
+        text3 = findViewById(R.id.textView7);
+        text4 = findViewById(R.id.textView8);
+
 
         top = AnimationUtils.loadAnimation(this , R.anim.top);
         down = AnimationUtils.loadAnimation(this, R.anim.down);
@@ -35,6 +38,8 @@ public class splash extends AppCompatActivity {
         imageView.setAnimation(top);
         text1.setAnimation(down);
         text2.setAnimation(down);
+        text3.setAnimation(down);
+        text4.setAnimation(down);
 
         new Handler().postDelayed(new Runnable() {
             @Override

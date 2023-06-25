@@ -4,6 +4,7 @@ package com.example.cardiac_recorder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         final EditText comment = findViewById(R.id.editTextTextPersonName7);
 
-        final Button addButton = findViewById(R.id.button);
-
-
+        final Button addButton = findViewById(R.id.btnAdd);
+        final Button backButton = findViewById(R.id.btnBack);
 
 
         final String phoneNumber = Login.phoneNo;  // Phone No taken from Login page
@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
                 }
         );
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, controll.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
