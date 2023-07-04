@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class editActivity extends AppCompatActivity {
 
@@ -38,6 +44,220 @@ public class editActivity extends AppCompatActivity {
 
 
 
+        dateMeasured.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidDate = validateDate(input);
+                    if (!isValidDate) {
+                        dateMeasured.setError("Invalid date format (dd-mm-yyyy)");
+                    } else {
+                        dateMeasured.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateDate(String input) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+                dateFormat.setLenient(false); // Disable lenient mode for strict date parsing
+
+                try {
+                    dateFormat.parse(input);
+                    return true; // Date is valid
+                } catch (ParseException e) {
+                    return false; // Date is invalid
+                }
+            }
+
+        });
+
+        timeMeasured.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidTime = validateTime(input);
+                    if (!isValidTime) {
+                        timeMeasured.setError("Invalid time format (hh:mm)");
+                    } else {
+                        timeMeasured.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateTime(String input) {
+                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.US);
+                timeFormat.setLenient(false); // Disable lenient mode for strict time parsing
+
+                try {
+                    timeFormat.parse(input);
+                    return true; // Time is valid
+                } catch (ParseException e) {
+                    return false; // Time is invalid
+                }
+            }
+
+        });
+
+
+
+        systolicPressure.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidNumber = validateNonNegativeInteger(input);
+                    if (!isValidNumber) {
+                        systolicPressure.setError("Invalid value (non-negative integer required)");
+                    } else {
+                        systolicPressure.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateNonNegativeInteger(String input) {
+                try {
+                    int value = Integer.parseInt(input);
+                    return value >= 0; // Check if the value is non-negative
+                } catch (NumberFormatException e) {
+                    return false; // Invalid number format
+                }
+            }
+
+        });
+
+
+        diastolicPressure.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidNumber = validateNonNegativeInteger(input);
+                    if (!isValidNumber) {
+                        systolicPressure.setError("Invalid value (non-negative integer required)");
+                    } else {
+                        systolicPressure.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateNonNegativeInteger(String input) {
+                try {
+                    int value = Integer.parseInt(input);
+                    return value >= 0; // Check if the value is non-negative
+                } catch (NumberFormatException e) {
+                    return false; // Invalid number format
+                }
+            }
+        });
+
+
+        heartRate.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidNumber = validateNonNegativeInteger(input);
+                    if (!isValidNumber) {
+                        systolicPressure.setError("Invalid value (non-negative integer required)");
+                    } else {
+                        systolicPressure.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateNonNegativeInteger(String input) {
+                try {
+                    int value = Integer.parseInt(input);
+                    return value >= 0; // Check if the value is non-negative
+                } catch (NumberFormatException e) {
+                    return false; // Invalid number format
+                }
+            }
+        });
+
+
+        comment.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String input = editable.toString();
+                if (!input.isEmpty()) {
+                    boolean isValidString = validateString(input);
+                    if (!isValidString) {
+                        comment.setError("Invalid string length (0-20 characters)");
+                    } else {
+                        comment.setError(null); // Clear any previous error
+                    }
+                }
+            }
+
+            private boolean validateString(String input) {
+                int length = input.length();
+                return length >= 0 && length <= 20; // Check if the string length is within the specified range
+            }
+
+        });
 
         final String phoneNumber = Login.phoneNo;  // Phone No taken from Login page
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
