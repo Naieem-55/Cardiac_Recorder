@@ -55,3 +55,7 @@ c
 ### Update data section & All records
 
 <img src="https://github.com/Naieem-55/Cardiac_Recorder/assets/69342375/1a2bdaa8-9bd0-414e-ac16-9abec447b357" height="700">
+
+## More Details
+
+ - [Click here](https://github.com/Naieem-55/Cardiac_Recorder/wiki) 
