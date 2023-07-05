@@ -18,7 +18,9 @@ public class controll extends AppCompatActivity {
 
         buttonShowData = findViewById(R.id.buttonShowData);
         buttonAddData = findViewById(R.id.buttonAddData);
-
+        /**
+         * This button is for Showing saved Data
+         */
         buttonAddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,7 +28,9 @@ public class controll extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        /**
+         * this button is for Adding Data
+         */
         buttonShowData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
