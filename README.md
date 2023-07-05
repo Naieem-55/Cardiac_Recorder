@@ -12,7 +12,7 @@ The app provides a user-friendly interface and ensures accurate data entry by fo
 ## ScreenShots of the Application
 ### Splash Screen
 
-![Splash](https://github.com/Naieem-55/Cardiac_Recorder/assets/69342375/7c826df1-4729-48a7-99e9-d65f24d63c01)
+<img src="https://github.com/Naieem-55/Cardiac_Recorder/assets/69342375/7c826df1-4729-48a7-99e9-d65f24d63c01" width="300">
 
 ### Login
 
