@@ -74,4 +74,21 @@ public class User {
     public String getDate() {
         return Date;
     }
+    public boolean isSysInvalid(){
+        try{
+            int val = Integer.parseInt(Systolic);
+            return val<90 || val>140;
+        }catch (Exception ignored){
+            return false;
+        }
+    }
+
+    public boolean isDysInvalid(){
+        try{
+            int val = Integer.parseInt(Diastolic);
+            return val<60 || val>90;
+        }catch (Exception ignored){
+            return false;
+        }
+    }
 }
