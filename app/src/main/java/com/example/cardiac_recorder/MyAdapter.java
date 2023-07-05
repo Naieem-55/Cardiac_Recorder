@@ -52,6 +52,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.Diastolic.setText(user.getDiastolic());
         holder.HeartRate.setText(user.getHeartRate());
         holder.Date.setText(user.getDate());
+
+        if(user.isSysInvalid()){
+            holder.Systolic.setTextColor(context.getColor(R.color.red));
+        }
+        else{
+            holder.Systolic.setTextColor(context.getColor(R.color.black));
+        }
+        if(user.isDysInvalid()){
+            holder.Diastolic.setTextColor(context.getColor(R.color.red));
+        }
+        else{
+            holder.Diastolic.setTextColor(context.getColor(R.color.black));
+        }
     }
 
     @Override
