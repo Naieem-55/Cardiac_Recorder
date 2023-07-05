@@ -25,7 +25,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int serialNo = Login.serialNo;
+    //private int serialNo = Login.serialNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
                         final String heartRateText = heartRate.getText().toString();
                         final String comment2 = comment.getText().toString();
 
-                        serialNo++;
+                        Login.serialNo++;
 
                         if(dateMeasuredText.isEmpty() || timeMeasuredText.isEmpty() || systolicPressureText.isEmpty() || diastolicPressureText.isEmpty() || heartRateText.isEmpty()){
                             Toast.makeText(MainActivity.this, "Please Fill all the Data", Toast.LENGTH_SHORT).show();
@@ -283,12 +283,12 @@ public class MainActivity extends AppCompatActivity {
                             databaseReference.child(phoneNumber).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Date").setValue(dateMeasuredText);
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Time").setValue(timeMeasuredText);
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Systolic").setValue(systolicPressureText);
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Diastolic").setValue(diastolicPressureText);
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("HeartRate").setValue(heartRateText);
-                                    databaseReference.child(phoneNumber).child(String.valueOf(serialNo)).child("Comment").setValue(comment2);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("Date").setValue(dateMeasuredText);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("Time").setValue(timeMeasuredText);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("Systolic").setValue(systolicPressureText);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("Diastolic").setValue(diastolicPressureText);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("HeartRate").setValue(heartRateText);
+                                    databaseReference.child(phoneNumber).child(String.valueOf(Login.serialNo)).child("Comment").setValue(comment2);
 
                                     Toast.makeText(MainActivity.this, "Added new record successfully", Toast.LENGTH_SHORT).show();
                                 }
