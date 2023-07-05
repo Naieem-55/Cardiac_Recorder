@@ -41,9 +41,13 @@ public class userList extends AppCompatActivity {
         myAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                MyAdapter.OnItemClickListener.super.onItemClick(position);
-                list.remove(position);
-                myAdapter.notifyItemRemoved(position);
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users")
+                        .child(Login.phoneNo).child(myAdapter.getItemCount()+"");
+                ref.removeValue();
+//                MyAdapter.OnItemClickListener.super.onItemClick(position);
+//                list.remove(position);
+//                myAdapter.notifyItemRemoved(position);
+                myAdapter.notifyDataSetChanged();
             }
         });
 
