@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     public static String phoneNo;
     public static int serialNo = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,10 @@ public class Login extends AppCompatActivity {
         final TextView registerButton=findViewById(R.id.register_now_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Login Page intent Method
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 final String phoneText=phone.getText().toString();
@@ -47,7 +52,9 @@ public class Login extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if(snapshot.hasChild(phoneText)){
                                 final String getPassword=snapshot.child(phoneText).child("password").getValue(String.class);
-
+                                /**
+                                 * Checking Password
+                                 */
                                 if(getPassword.equals(passwordText)){
                                     Toast.makeText(Login.this,"Login Successful.",Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(Login.this,controll.class));

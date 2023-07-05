@@ -27,6 +27,10 @@ public class editActivity extends AppCompatActivity {
     private int serialNo =MyAdapter.itemPosition;
     private EditText dMeasured , tMeasured , sPressure , dPressure , htRate ;
 
+    /**
+     * Adding data from the recyclerView
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

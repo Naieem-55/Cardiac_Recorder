@@ -74,6 +74,11 @@ public class User {
     public String getDate() {
         return Date;
     }
+
+    /**
+     * Checking if the value of Systolic pressure valid
+     * @return
+     */
     public boolean isSysInvalid(){
         try{
             int val = Integer.parseInt(Systolic);
@@ -83,6 +88,10 @@ public class User {
         }
     }
 
+    /**
+     * Checking if the value of dystolic pressure valid
+     * @return
+     */
     public boolean isDysInvalid(){
         try{
             int val = Integer.parseInt(Diastolic);
